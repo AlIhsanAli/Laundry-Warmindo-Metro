@@ -1,13 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fef7f0;
-  --foreground: #3d2b1f;
-  --primary: #d97706;
-  --secondary: #92400e;
-  --accent: #fbbf24;
-  --warm-red: #dc2626;
-  --warm-brown: #92400e;
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --primary: #0EA5E9;
+  --secondary: #0284C7;
+  --accent: #E0F2FE;
+  --premium-gold: #FCD34D;
 }
 
 @theme inline {
@@ -16,8 +15,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
-  --color-warm-red: var(--warm-red);
-  --color-warm-brown: var(--warm-brown);
+  --color-premium-gold: var(--premium-gold);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -30,13 +28,25 @@ body {
 
 /* Custom animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .fade-in {

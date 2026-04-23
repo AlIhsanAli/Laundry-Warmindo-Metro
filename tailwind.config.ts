@@ -14,8 +14,11 @@ const config: Config = {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         accent: 'var(--accent)',
-        'warm-red': 'var(--warm-red)',
-        'warm-brown': 'var(--warm-brown)',
+        'premium-gold': 'var(--premium-gold)',
+        cloudy: {
+          blue: '#BFDBFE',
+          white: '#F1F5F9',
+        }
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],

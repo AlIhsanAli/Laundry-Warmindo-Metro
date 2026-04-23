@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Warmindo Metro - Kasir Modern",
-  description: "Sistem pemesanan mandiri untuk Warmindo Metro dengan scan barcode meja",
+  title: "Laundry Warmindo Metro",
+  description: "Layanan Laundry Premium Profesional - Tracking Order Real-time, Cuci Kering Setrika Express untuk Perusahaan Besar",
 };
 
 export default function RootLayout({
