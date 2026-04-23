@@ -2,52 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Cloud, Shirt, Droplets, Clock, Truck, Award, Search, CheckCircle, MapPin, Star, ArrowRight, Phone, Mail } from 'lucide-react';
-
-const premiumServices = [
-  {
-    name: 'Cuci & Kering Premium',
-    price: 'Rp 25.000/kg',
-    icon: Shirt,
-    desc: 'Cuci kering berkualitas tinggi dengan deterjen premium dan teknologi modern',
-    features: ['Deterjen organik', 'Pengering vakum', 'Lipat rapi']
-  },
-  {
-    name: 'Setrika Profesional',
-    price: 'Rp 15.000/kg',
-    icon: Droplets,
-    desc: 'Setrika rapi oleh tenaga ahli berpengalaman dengan peralatan profesional',
-    features: ['Setrika uap', 'Teknologi anti-kusut', 'Finishing premium']
-  },
-  {
-    name: 'Express 12 Jam',
-    price: 'Rp 40.000/kg',
-    icon: Clock,
-    desc: 'Layanan cepat untuk kebutuhan mendesak dengan prioritas tinggi',
-    features: ['Proses 12 jam', 'Pickup priority', 'Garansi tepat waktu']
-  },
-  {
-    name: 'Pickup & Delivery Gratis',
-    price: 'Gratis > 5kg',
-    icon: Truck,
-    desc: 'Layanan antar jemput gratis untuk area Metro dengan tracking real-time',
-    features: ['Area Metro', 'Tracking GPS', 'Jadwal fleksibel']
-  },
-  {
-    name: 'Dry Clean Deluxe',
-    price: 'Rp 60.000/item',
-    icon: Shirt,
-    desc: 'Dry clean profesional untuk pakaian halus, jas, dan kain premium',
-    features: ['Solvent eco-friendly', 'Perawatan khusus', 'Packaging premium']
-  },
-  {
-    name: 'Paket Corporate',
-    price: 'Custom',
-    icon: Award,
-    desc: 'Solusi laundry khusus perusahaan dengan kontrak bulanan dan diskon volume',
-    features: ['Kontrak bulanan', 'Pickup dedicated', 'Laporan bulanan']
-  },
-];
+import { Cloud, Search, CheckCircle, MapPin, Star, Phone, Mail } from 'lucide-react';
 
 const cloudVariants = {
   animate: {
@@ -231,7 +186,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Premium Services Section */}
+      {/* Service Focus Section */}
       <section className="relative z-10 py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -242,50 +197,91 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Layanan Premium Kami
+              Fokus pada Kecepatan & Keandalan
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Teknologi modern dan tenaga ahli untuk hasil laundry terbaik bagi perusahaan Anda
+              Menyediakan experience laundry yang konsisten untuk perusahaan besar, dengan detail pelayanan yang dirancang untuk skala bisnis.
             </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {premiumServices.map((service, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-8"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="bg-blue-100 p-3 rounded-xl mr-4">
-                    <service.icon className="text-blue-600" size={32} />
-                  </div>
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-10 shadow-2xl border border-blue-100">
+                <span className="inline-flex rounded-full bg-blue-50 text-blue-700 px-4 py-1 text-sm font-semibold mb-4">
+                  Laundry Enterprise Grade
+                </span>
+                <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                  Dari jemput sampai kirim, semua terasa profesional dan tenang.
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Sistem kami mendukung proses yang cepat, bersih, dan aman untuk volume tinggi. Landing page ini menyampaikan bahwa layanan kami tidak hanya cepat tapi juga premium dalam setiap detail.
+                </p>
+
+                <div className="grid gap-4 sm:grid-cols-2 mt-8">
+                  {[
+                    'Monitoring pesanan real-time',
+                    'Penjemputan & pengantaran prioritas',
+                    'Perawatan premium untuk setiap kain',
+                    'Layanan yang mudah ditimbang dan ditagih'
+                  ].map((item, idx) => (
+                    <div key={idx} className="rounded-3xl bg-blue-50 p-5 border border-blue-100">
+                      <p className="text-gray-700 font-semibold">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[1.5rem] bg-white/90 backdrop-blur-sm p-8 shadow-xl border border-blue-100">
+                  <p className="text-sm uppercase tracking-[0.2em] text-blue-600 font-semibold mb-4">Kepercayaan</p>
+                  <p className="text-3xl font-bold text-gray-800">100+</p>
+                  <p className="text-gray-600 mt-2">Klien perusahaan yang mempercayakan laundry sehari-hari.</p>
+                </div>
+                <div className="rounded-[1.5rem] bg-white/90 backdrop-blur-sm p-8 shadow-xl border border-blue-100">
+                  <p className="text-sm uppercase tracking-[0.2em] text-blue-600 font-semibold mb-4">Presisi</p>
+                  <p className="text-3xl font-bold text-gray-800">98%</p>
+                  <p className="text-gray-600 mt-2">Tepat waktu untuk pengiriman berikutnya, setiap kali.</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="rounded-[2rem] bg-gradient-to-br from-blue-600/10 via-white to-blue-50 p-8 shadow-2xl border border-blue-100"
+            >
+              <div className="rounded-[1.75rem] bg-white p-8 shadow-xl border border-blue-100">
+                <span className="inline-flex rounded-full bg-blue-100 text-blue-700 px-4 py-2 text-sm font-semibold mb-6">
+                  Solusi Khusus Bisnis</span>
+                <div className="flex items-center justify-between mb-6">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800">{service.name}</h3>
-                    <p className="text-blue-600 font-semibold">{service.price}</p>
+                    <p className="text-sm text-gray-500">Pickup & Delivery</p>
+                    <p className="text-2xl font-bold text-gray-800">Gratis & fleksibel</p>
+                  </div>
+                  <div className="text-blue-600 text-4xl">🚚</div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="rounded-3xl bg-blue-50 p-5 border border-blue-100">
+                    <p className="text-sm text-gray-500">Tracking order setiap langkah</p>
+                    <p className="font-semibold text-gray-800">Dari jemputan hingga selesai</p>
+                  </div>
+                  <div className="rounded-3xl bg-blue-50 p-5 border border-blue-100">
+                    <p className="text-sm text-gray-500">Layanan prioritas korporat</p>
+                    <p className="font-semibold text-gray-800">Sistem klaim dan support cepat</p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6">{service.desc}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-500">
-                      <CheckCircle className="text-green-500 mr-2" size={16} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
-                  Pesan Sekarang
-                </button>
-              </motion.div>
-            ))}
-          </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -316,12 +312,12 @@ export default function Home() {
           >
             {[
               {
-                icon: Award,
+                icon: Star,
                 title: 'Kualitas Premium',
                 desc: 'Teknologi canggih dan bahan premium untuk hasil terbaik'
               },
               {
-                icon: Clock,
+                icon: CheckCircle,
                 title: 'Tepat Waktu',
                 desc: 'Layanan express dan tracking real-time untuk efisiensi'
               },
